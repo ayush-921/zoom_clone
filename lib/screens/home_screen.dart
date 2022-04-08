@@ -10,15 +10,16 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int _page = 0; //selected item index
+  onPageChanged(int page) {
+    setState(() {
+      _page = page;
+    });
+  }
+
+  List<Widget> pages = [];
   @override
   Widget build(BuildContext context) {
-    int _page = 0; //selected item index
-    onPageChanged(int page) {
-      setState(() {
-        _page = page;
-      });
-    }
-
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
